@@ -6,35 +6,61 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:id="@+id/vg_header"
+        android:layout_width="420dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/gradient_bg"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="70dp"
+            android:src="@drawable/imagem2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:layout_marginStart="8dp"
+            android:text="Calculador IMC"
+            android:textSize="24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="36dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="30dp"
+            android:text="Preencha todos os campos para calcular seu IMC" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/btn_calcular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:layout_marginBottom="112dp"
+        android:layout_margin="100dp"
+        android:layout_marginBottom="200dp"
         android:text="Calcular"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+        app:layout_constraintVertical_bias="1.0" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="9dp">
+        app:hintEnabled="false"
+        app:layout_constraintTop_toBottomOf="@+id/edt_altura"
+        tools:layout_editor_absoluteX="0dp">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edt_peso"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Digite seu peso: Ex. 00.00"
-            android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -42,19 +68,44 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:orientation="horizontal"
+        app:hintEnabled="false"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+        app:layout_constraintTop_toTopOf="@+id/textInputLayout"
+        app:layout_constraintVertical_bias="0.269">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edt_altura"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Digite sua altura: Ex: 0.00"
-            android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edt_peso"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="1dp"
+        android:background="@drawable/rounded_bg"
+        android:drawableEnd="@drawable/imagem2"
+        android:hint="Digite seu peso: Ex. 00.00"
+        android:inputType="numberDecimal"
+        android:maxLength="6"
+        app:layout_constraintTop_toTopOf="@+id/textInputLayout" />
 
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edt_altura"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="1dp"
+        android:background="@drawable/rounded_bg"
+        android:drawableEnd="@drawable/imagem1"
+        android:hint="Digite sua altura: Ex: 0.00"
+        android:inputType="numberDecimal"
+        android:maxLength="4"
+        app:layout_constraintTop_toBottomOf="@+id/vg_header"
+        tools:layout_editor_absoluteX="0dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

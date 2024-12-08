@@ -6,17 +6,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    tools:context=".ResultActivity">
+    tools:context=".ResultActivity"
+    android:gravity="center_horizontal">
 
-    <TextView
-        android:id="@+id/tv_result"
-        android:textSize="60dp"
-        android:textStyle="bold"
-        android:maxLength="5"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/vg_header"
+        android:layout_width="415dp"
         android:layout_height="wrap_content"
-        tools:text="23.66" />
+        android:background="@drawable/gradient_bg"
+        android:orientation="vertical"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:src="@drawable/imagem2"
+            android:layout_margin="70dp"
+            android:layout_width="40dp"
+            android:layout_height="50dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:textSize="24dp"
+            android:layout_marginStart="8dp"
+            android:text="Calculador de Índice de massa corporal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="36dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="Confirme abaixo seu resultado e sua classificação" />
+
+    </LinearLayout>
+
 
     <TextView
         android:id="@+id/tv_classificacao_label"
@@ -31,5 +58,7 @@
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:textSize="60dp"
-        tools:text="TextView" />
+        tools:text="" />
+
 </LinearLayout>
+
