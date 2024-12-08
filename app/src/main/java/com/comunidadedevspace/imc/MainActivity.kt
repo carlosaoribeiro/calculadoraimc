@@ -1,5 +1,6 @@
 package com.comunidadedevspace.imc
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Parcel
@@ -61,9 +62,19 @@ class MainActivity() : AppCompatActivity(), Parcelable {
 
                 val alturaQ2 = altura * altura
                 val resultado = peso / alturaQ2
+
+                //Navegar para proxima tela
+                //Criar um layout da proxima tela
+                //Passar dados (resultado) para proxima tela
+
+                //Para chamar a proxima tela precisamos da Intent - Classe do prorpio android
+
+                val intent = Intent(this, ResultActivity::class.java)
+                intent.putExtra(KEY_RESULT_IMC, resultado)
+                startActivity(intent)
+
                 println("Carlos Ribeiro ação do botão" + resultado)
             }
-
 
         }
     }
